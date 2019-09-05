@@ -1,7 +1,9 @@
+import java.util.Set;
+
 //time:O(n)
 //space:O(n)
 
-class Solution {
+class Solution{
     public int longestConsecutive(int[] nums) {
           Set<Integer> num_set = new HashSet<Integer>();
           for (int num : nums) {
