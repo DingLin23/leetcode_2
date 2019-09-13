@@ -17,6 +17,7 @@ class Solution{
 // }
 public void SortedColors(int[] nums) {
     // 1-pass
+    if(nums == null || nums.length==0) return;
     int p1 = 0, p2 = nums.length - 1, index = 0;
     while (index <= p2) {
         if (nums[index] == 0) {
