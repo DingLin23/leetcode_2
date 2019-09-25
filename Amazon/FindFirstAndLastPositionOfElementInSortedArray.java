@@ -1,5 +1,5 @@
 //time: o(lgn)
-//space:o(n)
+//space:o(1)
 
 class Solution{
     public int [] searchRange(int []nums, int target){
