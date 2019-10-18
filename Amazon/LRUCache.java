@@ -1,7 +1,3 @@
-/*
-  LRU Cache - LeetCode: https://leetcode.com/problems/lru-cache/
-  This code passes all Leetcode test cases as of Oct. 1st 2019
-*/
 
 class LRUCache {
   // Hashtable backs up the Doubly Linked List for O(1) access to cache items
