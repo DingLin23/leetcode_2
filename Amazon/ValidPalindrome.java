@@ -6,10 +6,10 @@ class Solution{
         int left = 0, right = s.length()-1;
         while(left < right){
         while(left < right && !Character.isLetterOrDigit(s.charAt(left))){
-            left++;
+            left++;  //去排掉空格或者不是数字和letter的符号之类。 %&！！！  a@aaa@. 排完得到a@aaa@
         }
         while(left < right && !Character.isLetterOrDigit(s.charAt(right))){
-            right--;
+            right--; // 排完得到a@aaa@
         }
         if(Character.toLowerCase(left)!= Character.toLowerCase(right)){
             return false;
