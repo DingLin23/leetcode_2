@@ -1,6 +1,6 @@
 //time:o(n)
 //space:(1)
-
+//用两个指针去做临时存储
 class Solution {
     public int[] sortArrayByParity(int[] A) {
         for (int i = 0, j = 0; j < A.length; j++)
