@@ -26,15 +26,15 @@ class Solution {
     // then if not both case, check val is equal or not.
     // recusively check s.right and t.right, s.left and t.left.
         
-        if(s == null) return false;
-        if (isSameTree(s,t)) return true;
-        return isSubtree(s.left,t) || isSubtree(s.right,t); 
+        if(s == null) return false;// main tree checking
+        if (isSameTree(s,t)) return true;//check if both are exactly same tree.
+        return isSubtree(s.left,t) || isSubtree(s.right,t); // if not same tree, go the s's child to check
   
     }
     private boolean isSameTree(TreeNode s,TreeNode t){
-        if(s == null && t == null) return true;
-        if(s == null || t == null) return false;
-        if(s.val != t.val) return false;
+        if(s == null && t == null) return true;// check if both dont have child 
+        if(s == null || t == null) return false;// check if either one has chil
+        if(s.val != t.val) return false; // check both value equal or not.
         return isSameTree(s.left,t.left) && isSameTree(s.right,t.right);
     }
 }
