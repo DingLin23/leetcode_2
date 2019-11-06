@@ -1,7 +1,7 @@
 import java.util.Arrays;
 
 //time: o(nlgn);
-//space: o(1)
+//space: o(1);
 class TwoSum_UniquePairs{
     public static int getUniquePairs(int[] nums, int target) {
         Arrays.sort(nums);
