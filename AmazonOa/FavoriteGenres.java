@@ -45,7 +45,7 @@
 import java.util.*;
 public class FavoriteGenres{
 
-         public static Map<String, List<String>> findGenres (Map<String, List<String>> userSongs, Map<String, List<String>> songGenres) {
+        public static Map<String, List<String>> findGenres (Map<String, List<String>> userSongs, Map<String, List<String>> songGenres) {
         Map<String, List<String>> output = new HashMap<>();
 
         if (songGenres.size() == 0) {
@@ -59,12 +59,11 @@ public class FavoriteGenres{
         Map<String, String> songs = new HashMap<>();
         for (Map.Entry<String, List<String>> entry : songGenres.entrySet()){
             for (String song : entry.getValue()) {
-                songs.put(song, entry.getKey());
+                songs.put(song, entry.getKey()); 
             }
         }
         
         Map<String, Integer> genres = new HashMap<>();
-
         for (Map.Entry<String, List<String>> entry : userSongs.entrySet()) {
             genres.clear();
             for (String song : entry.getValue()) {
