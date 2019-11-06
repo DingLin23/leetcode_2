@@ -6,6 +6,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - Main",
+            "request": "launch",
+            "mainClass": "Main",
+            "projectName": "leetcod_2_af7ac85a"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - FavotiteGenres",
+            "request": "launch",
+            "mainClass": "FavotiteGenres",
+            "projectName": "leetcod_2_af7ac85a"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - FavoriteGenres",
+            "request": "launch",
+            "mainClass": "FavoriteGenres",
+            "projectName": "leetcod_2_af7ac85a"
+        },
+        {
+            "type": "java",
             "name": "Debug (Launch) - Current File",
             "request": "launch",
             "mainClass": "${file}"
