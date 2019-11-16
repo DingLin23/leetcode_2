@@ -25,12 +25,12 @@ public class AddTwoNumbers {
                 sum += p2.val;
                 p2 = p2.next;
             }
-            cur.next = new ListNode(sum % 10);
-            sum /= 10;
+            cur.next = new ListNode(sum % 10);//如果大于10，留余数，如果小于10取原数
+            sum /= 10;//carring the 1 to the next number.
             cur = cur.next;
         }
-        if (sum == 1) {
-            cur.next = new ListNode(1);
+        if (sum == 1) { //if the last two add pair has number greater than 10
+            cur.next = new ListNode(1); // carring the 1 to the next new ndoe
         }
         return dummy.next;
     }
