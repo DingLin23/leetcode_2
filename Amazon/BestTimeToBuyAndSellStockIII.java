@@ -2,6 +2,8 @@
 //space:o(1)
 class Solution {
     public int maxProfit(int[] prices) {
+        //corner case 
+        if(prices == null || prices.length <2) return 0;
         int buyOne = Integer.MAX_VALUE;
         int sellOne = 0;
         int buyTwo = Integer.MAX_VALUE;
