@@ -57,7 +57,7 @@ class Solution
                 
             }else{
                 if (cur != parent[pre]){
-                    low[pre] = Math.min(low[pre], depth[cur]);
+                    low[pre] = Math.min(low[pre], depth[cur-1]);
                 }
             }
         }
