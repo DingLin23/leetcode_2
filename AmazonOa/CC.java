@@ -9,7 +9,7 @@ class Solution
     boolean[] v;
     int[] depth, low, parent;
     int time;
-    List<List<Integer>> map;
+    List<List<Integer>> list;
     List<PairInt> res;
     
     // METHOD SIGNATURE BEGINS, THIS METHOD IS REQUIRED
@@ -21,13 +21,13 @@ class Solution
         res = new ArrayList<>();
         v = new boolean[numOfWarehouses];
         for(int i =0; i<numOfWarehouses ; i++){
-            map.add(new ArrayList<>());
+            list.add(new ArrayList<>());
         }
         for (PairInt cur : roads){
             int a1= cur.first;
             int a2 = cur.second;
-            map.get(a1 - 1).add(a2);
-            map.get(a2 - 1).add(a1);
+            list.get(a1 - 1).add(a2);
+            list.get(a2 - 1).add(a1);
         }
         depth = new int[numOfWarehouses];
         low = new int[numOfWarehouses];
@@ -42,17 +42,14 @@ class Solution
         v[pre] = true;
         depth[pre] += ++time;
         low[pre] += time;
-        for (int cur: map.get(pre)){
+        for (int cur: list.get(pre)){
             parent[cur - 1] = pre ;
             if (!v[cur - 1]){
                 dfs(cur - 1);
                 low[pre] = Math.min(low[pre],low[cur - 1]);
                 if(low[cur - 1]> depth[pre]){
-                    
                     PairInt tmp = new PairInt(pre + 1, cur);
-                    res.add(tmp);
-                
-                    
+                    res.add(tmp);                   
                 }
                 
             }else{
