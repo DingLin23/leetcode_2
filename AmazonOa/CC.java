@@ -33,11 +33,8 @@ class Solution
         low = new int[numOfWarehouses];
         parent = new int [numOfWarehouses];
         dfs(0);
-        return res;
-        
-    }
-    
-    
+        return res;       
+    }  
     void dfs(int pre){
         v[pre] = true;
         depth[pre] += ++time;
