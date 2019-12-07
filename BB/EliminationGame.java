@@ -1,19 +1,18 @@
 //time:O(Nlgn)
 //space:O(1)
-
 class Solution {
     public int lastRemaining(int n) {
-        boolean left = true;
-        int remaining = n;
-        int step = 1;
+        boolean flag = true;
         int head = 1;
-        while (remaining > 1) {
-            if (left || remaining % 2 ==1) { // only when remaining % 2 ==0 we update head; left here for the 1st removing. always start from 1;
-                head = head + step;
+        int step = 1;
+        while(n >1){
+            if(flag || n % 2 ==1){//only first time need to update head we need boolean flag here;
+                //following by pattern true,false,true,false;always update head when in odd iteration.everytime after we cut remaining into half;
+                head += step; // first case head always +1;
             }
-            remaining = remaining / 2;
-            step = step * 2;
-            left = !left;
+            step *= 2;
+            flag = !flag; 
+            n /= 2; //special case when n = 2 will be dealed in here;
         }
         return head;
     }
