@@ -1,3 +1,6 @@
+//time:o(lgn)
+//space:o(1)
+
 class Solution {
     public int search(int[] nums, int target) {
         if(nums == null || nums.length == 0) return -1;
