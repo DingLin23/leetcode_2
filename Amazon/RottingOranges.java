@@ -27,7 +27,7 @@ class Solution {
         //bfs starting from initially rotten oranges
         while(!queue.isEmpty()) {
             count++;
-            int size = queue.size();
+            int size = queue.size();//一定要有这一行，queue.size 会变
             for(int i = 0 ; i < size ; i++) {
                 int[] point = queue.poll();
                 for(int dir[] : dirs) {
