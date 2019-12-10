@@ -28,6 +28,7 @@ class Solution {
         return s.substring(palindromeStartsAt, palindromeStartsAt+maxLen);
     }
 // time : O(n^2) space : O(1)
+    String res = "";
     public String longestPalindrome(String s) {
         if (s == null || s.length() == 0) return s;
         for (int i = 0; i < s.length(); i++) {
