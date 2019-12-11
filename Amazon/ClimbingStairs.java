@@ -1,6 +1,6 @@
 //time:O(n)
 //space:O(n)
-
+//Dp在for loop 里面从0开始到n结束。//还没走时候是0步，走完是n步。 dp[i]就是多少种方法如果走到i步的位置。
 class Solution {
     public int climbStairs(int n) {
     if (n <= 1) {
