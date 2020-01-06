@@ -17,7 +17,7 @@ class Solution
                                       List<PairInt> roads)
     {
         time=0;
-        map = new ArrayList<>();
+        list = new ArrayList<>();
         res = new ArrayList<>();
         v = new boolean[numOfWarehouses];
         for(int i =0; i<numOfWarehouses ; i++){
@@ -36,6 +36,9 @@ class Solution
         return res;       
     }  
     void dfs(int pre){
+        //会有time limited exceeded
+        //how to fix
+        // if(v[pre]) return; will fix!!!
         v[pre] = true;
         depth[pre] += ++time;
         low[pre] += time;
