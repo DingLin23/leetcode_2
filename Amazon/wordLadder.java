@@ -1,3 +1,7 @@
+// Time Complexity: O(N*K^2) , where N is the length of words and K is the maximum length of any given word. For each word in words, in order to find neighbors we may construct O(K) new words, each in O(K) time.
+
+// Space Complexity: O(NK), the space to store the word list.
+
 class Solution {
     //counts transformations times.
     public int ladderLength(String beginWord, String endWord, List<String> wordList) {
