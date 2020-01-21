@@ -24,13 +24,16 @@ class Node {
 //SPACE:O(1)
 class Solution {
     public Node connect(Node root) {
-        return helper(root, null);
-    }
-    private Node helper(Node cur, Node r){
-        if(cur == null) return null;
-        cur.next = r;
-        cur.left = helper(cur.left,cur.right);
-        cur.right = (r == null)?  helper(cur.right,null) : helper(cur.right,r.left);
-        return cur;
+		connect(root,null); //base case level 0
+        return root;
+	}
+    private void connect(Node root1, Node root2){
+        if(root1 == null) return;
+        root1.next = root2;
+        connect(root1.left,root1.right); // base case 2 level 1
+        if(root2 != null){ //after level 1.
+            connect(root1.right, root2.left);
+            connect(root2.left,root2.right);
+        }
     }
 }
