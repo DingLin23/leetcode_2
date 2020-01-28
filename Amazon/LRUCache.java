@@ -1,116 +1,83 @@
-
 class LRUCache {
-  // Hashtable backs up the Doubly Linked List for O(1) access to cache items
-  Map<Integer, ListNode> hashtable = new HashMap<Integer, ListNode>();
-  ListNode head;
-  ListNode tail;
-
-  int totalItemsInCache;
-  int maxCapacity;
-
-  public LRUCache(int maxCapacity) {
-    // Cache starts empty and capacity is set by client
-    totalItemsInCache = 0;
-    this.maxCapacity = maxCapacity;
-
-    // Dummy head and tail nodes to avoid empty states
-    head = new ListNode();
-    tail = new ListNode();
-
-    // Wire the head and tail together
-    head.next = tail;
-    tail.prev = head;
-  }
-
-  public int get(int key) {
-    ListNode node = hashtable.get(key);
-
-    if (node == null) {
-      return -1; // we should throw an exception here, but for Leetcode's sake
-    }
-
-    // Item has been accessed. Move to the front of the cache
-    moveToHead(node);
-
-    return node.value;
-  }
-
-  public void put(int key, int value) {
-    ListNode node = hashtable.get(key);
-
-    if (node == null) {
-      // Item not found, create a new entry
-      ListNode newNode = new ListNode();
-      newNode.key = key;
-      newNode.value = value;
-
-      // Add to the hashtable and the actual list that represents the cache
-      hashtable.put(key, newNode);
-      addToFront(newNode);
-      totalItemsInCache++;
-
-      // If over capacity remove the LRU item
-      if (totalItemsInCache > maxCapacity) {
-        removeLRUEntry();
+  class Node{
+      int key;
+      int val;
+      Node prev;
+      Node next;
+      
+      public Node(int key, int val){
+          this.key = key;
+          this.val = val;
       }
-    } else {
-      // If item is found in the cache, just update it and move it to the head of the list
-      node.value = value;
-      moveToHead(node);
-    }
-
   }
-
-  private void removeLRUEntry() {
-    ListNode tail = popTail();
-
-    hashtable.remove(tail.key);
-    --totalItemsInCache;
+  
+  int capacity;
+  int size;
+  Map<Integer,Node> map;
+  Node head;
+  Node tail;
+  public LRUCache(int capacity) {
+      this.capacity = capacity;
+      size = 0;
+      map = new HashMap<>();
+      head = new Node(0,0);
+      tail = new Node(0,0);
+      head.next = tail;
+      tail.prev = head;
   }
-
-  private ListNode popTail() {
-    ListNode tailItem = tail.prev;
-    removeFromList(tailItem);
-
-    return tailItem;
+  
+  public int get(int key) {
+      if(map.containsKey(key)){
+          Node node = map.get(key);
+          remove(key);
+          addHead(key,node.val);
+          return node.val;
+      }else{
+          return -1;
+      }
   }
-
-  private void addToFront(ListNode node) {
-    // Wire up the new node being to be inserted
-    node.prev = head;
-    node.next = head.next;
-
-    /*
-      Re-wire the node after the head. Our node is still sitting "in the middle of nowhere".
-      We got the new node pointing to the right things, but we need to fix up the original
-      head & head's next.
-      head <-> head.next <-> head.next.next <-> head.next.next.next <-> ...
-      ^            ^
-      |- new node -|
-      That's where we are before these next 2 lines.
-    */
-    head.next.prev = node;
-    head.next = node;
+  
+  public void put(int key, int val) {
+      if(map.containsKey(key)){
+          remove(key);
+          addHead(key,val);
+      }else{
+          addHead(key,val);
+      }
   }
-
-  private void removeFromList(ListNode node) {
-    ListNode savedPrev = node.prev;
-    ListNode savedNext = node.next;
-
-    savedPrev.next = savedNext;
-    savedNext.prev = savedPrev;
+  
+  private void remove(int key){
+      Node cur = map.get(key);
+      Node pre = cur.prev;
+      Node next = cur.next;
+      pre.next = next;
+      next.prev = pre;
+      size--;
+      map.remove(key);
+      
   }
-
-  private void moveToHead(ListNode node) {
-    removeFromList(node);
-    addToFront(node);
+  private void addHead(int key, int val){
+      Node node = new Node(key,val);
+      Node next = head.next;
+      head.next = node;
+      node.prev = head;
+      node.next = next;
+      next.prev = node;
+      size++;
+      map.put(key,node);
+      
+      if(size > capacity){
+          Node preTail = tail.prev;
+          remove(preTail.key);
+      }
   }
-
-  private class ListNode {
-    int key;
-    int value;
-
-    ListNode prev;
-    ListNode next;
-  }
+  
 }
+
+
+/**
+* Your LRUCache object will be instantiated and called as such:
+* LRUCache obj = new LRUCache(capacity);
+* int param_1 = obj.get(key);
+* obj.put(key,value);
+*/
