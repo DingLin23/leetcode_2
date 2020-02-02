@@ -1,5 +1,5 @@
 import java.util.*;
-//time:o(nlgn)
+//time:o(n^2)
 //space; o(n)
 class Solution {
     public List<List<Integer>> threeSum(int[] nums) {
