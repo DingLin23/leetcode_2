@@ -20,6 +20,6 @@ public static int[] Ts(int[] nums, final int target){
         int nums[] = { 1, 4, 6, 3 };
         int target = 7;
         int res []=Ts(nums, target);
-        System.out.println(target);
+        System.out.println(res);
 }
 }
