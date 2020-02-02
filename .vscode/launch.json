@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - TwoSum",
+            "request": "launch",
+            "mainClass": "TwoSum",
+            "projectName": "leetcod_2_af7ac85a"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - TWoSum",
+            "request": "launch",
+            "mainClass": "TWoSum",
+            "projectName": "leetcod_2_af7ac85a"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - TwoSum_UniquePairs",
             "request": "launch",
             "mainClass": "TwoSum_UniquePairs",
