@@ -4,15 +4,19 @@
 //space:o(1)
 class Solution{
 public ListNode deleteDuplicates(ListNode head) {
-    ListNode fakeHead = head;
-    while(fakeHead != null && fakeHead.next != null){
-        if(fakeHead.val == fakeHead.next.val){
-            fakeHead.next = fakeHead.next.next;
-        } else{
-            fakeHead = fakeHead.next;
+    ListNode dummy = new ListNode (0);
+        dummy.next = head;
+        ListNode cur = dummy.next;
+        
+        while(cur != null){
+            while(cur.next != null && cur.val == cur.next.val){
+                cur.next = cur.next.next;
+                
+            }
+            cur = cur.next;
+            
         }
-    }
-    return head;
+        return dummy.next;
 }
 //Remove duplicates from unsorted linked list (works on sorted list as well) :
 
