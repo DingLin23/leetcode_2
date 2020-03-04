@@ -10,13 +10,16 @@
 //time: o(n)
 //space:o(1)
 class Solution {
-    public boolean isValidBST(TreeNode root) {
-       return help(root,null,null);
+   public boolean isValidBST(TreeNode root) {
+      return  helper(root, Long.MAX_VALUE,Long.MIN_VALUE);
+        
     }
-    private boolean help(TreeNode p, Integer low, Integer high) {
-    if (p == null) return true;
-    return (low == null || p.val > low) && (high == null || p.val < high) && help(p.left, low, p.val) && help(p.right, p.val, high);
-}
+    
+    private boolean helper(TreeNode root, long max, long min){
+        if(root == null) return true;
+        if(root.val >= max || root.val <= min) return false;
+        return helper(root.left, root.val, min) && helper(root.right, max,root.val);
+    }
 
 
 //time: o(n)
