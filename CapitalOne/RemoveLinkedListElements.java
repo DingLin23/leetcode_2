@@ -19,7 +19,7 @@ class Solution {
 
 class Solution {
     public ListNode removeElements(ListNode head, int val) {
-        ListNode dummy = new ListNode(0);
+        ListNode dummy = new ListNode(0);// have to have dummy, cause what if head.val = val.
     dummy.next = head;
     ListNode prev = dummy;
 
