@@ -2,10 +2,10 @@
 //space: o(amount)
 class Solution {
     public int coinChange(int[] coins, int amount) {
-        if (amount == 0) return 0;
-        if (coins == null || coins.length == 0) return -1;
+        if (amount == 0) return 0;// amount = 0, no coins can be made up
+        if (coins == null || coins.length == 0) return -1;// no coins return -1;
 
-        int[] dp = new int[amount + 1];
+        int[] dp = new int[amount + 1];// means total coints can be made up by that amount of money
         for (int i = 1; i <= amount; i++) {
             int min = Integer.MAX_VALUE;
             for (int j = 0; j < coins.length; j++) {
