@@ -3,7 +3,9 @@
 class Solution {
     public boolean wordPattern(String pattern, String str) {
         String[] arr= str.split(" ");
-        HashMap<Character, String> map = new HashMap<Character, String>();
+        HashMap<Character, String> map = new HashMap<>();
+
+        //corner case length of both pattern and str have to same to be true;
         if(arr.length!= pattern.length())
             return false;
         for(int i=0; i<arr.length; i++){
