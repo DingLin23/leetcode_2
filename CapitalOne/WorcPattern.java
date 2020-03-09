@@ -11,7 +11,7 @@ class Solution {
         for(int i=0; i<arr.length; i++){
             char c = pattern.charAt(i);
             if(map.containsKey(c)){
-                if(!map.get(c).equals(arr[i]))
+                if(!map.get(c).equals(arr[i])) // string has to use equals method to compare 
                     return false;
             }else{
                 if(map.containsValue(arr[i]))
