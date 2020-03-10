@@ -28,7 +28,7 @@ class Solution {
      if (head.val == val) {
        prev.next = head.next;
      } else {
-       prev = head;
+       prev = prev.next;
      }
      head = head.next;
    }
