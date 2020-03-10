@@ -6,8 +6,8 @@
  *     ListNode(int x) { val = x; }
  * }
  */
-//time : O(n)
-//space: O(n)
+//time : O(n+m)
+//space: O(1)
 class Solution {
     public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
         ListNode dummy = new ListNode(0);
@@ -29,7 +29,7 @@ class Solution {
     }
 
    // recursive way
-        //time:o(n); space:o(1)
+        //time:o(n+m); space:o(n+m)
         public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
         if(l1 == null) return l2;
         if(l2 == null) return l1;
