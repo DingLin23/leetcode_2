@@ -4,8 +4,8 @@ public class AddTwoNumbers {
      Input: (2 -> 4 -> 3) + (5 -> 6 -> 4)
      Output: 7 -> 0 -> 8
 
-     time : O(n)
-     space : O(n)
+     time : O(max(n,m))
+     space : O(max(n,m))
 
      * @param l1
      * @param l2
