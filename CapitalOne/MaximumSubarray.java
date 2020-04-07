@@ -5,7 +5,7 @@ class Solution {
         int res = nums[0];
         for(int i = 1; i < nums.length; i++){
             sum = Math.max(nums[i], sum+nums[i]); // compare cur postion to the sum of previous position.
-            res = Math.max(res,sum);// update the result.
+            res = Math.max(res,sum);// update the result.//compare the chosen one to the prev one
         }
         return res;
     }
