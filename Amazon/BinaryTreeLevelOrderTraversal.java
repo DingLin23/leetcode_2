@@ -1,4 +1,3 @@
-
 //time: O(n)
 //space: o(n)
 class Solution {
@@ -20,7 +19,7 @@ class Solution {
             res.add(list);
         }
         return res;
-        }
+    }
 }
 
 class Solution {

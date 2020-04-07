@@ -1,4 +1,4 @@
-// time: o(nlogn)
+// time: o(logn)
 //space: o(1);
 
 class Solution {
