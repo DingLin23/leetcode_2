@@ -6,6 +6,8 @@
  *     ListNode(int x) { val = x; }
  * }
  */
+// time: o(n)
+// space: o(1)
 class Solution {
     public ListNode middleNode(ListNode head) {
         if(head == null || head.next == null) return head;
