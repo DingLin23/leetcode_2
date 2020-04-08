@@ -1,7 +1,9 @@
 //time: o(n)
 //space: o(n)
-public class CountingElements {
-    int count = 0;
+
+class Solution {
+    public int countElements(int[] arr) {
+        int count = 0;
         if(arr == null || arr.length == 0) return count;
         
         Set<Integer> set = new HashSet<>();
@@ -13,4 +15,6 @@ public class CountingElements {
             if(set.contains(arr[i] +1)) count++;
         }
         return count;
+        
+    }
 }
