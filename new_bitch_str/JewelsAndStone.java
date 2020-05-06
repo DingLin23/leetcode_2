@@ -5,12 +5,13 @@
 // Example 1:
 // Input: J = "aA", S = "aAAbbbb"
 // Output: 3
-// Example 2:
 
+// Example 2:
 // Input: J = "z", S = "ZZ"
 // Output: 0
-// time:o(j+s)
-// space:o(j)
+
+// time: o(j+s)
+// space: o(j)
 
 class Solution {
     public int numJewelsInStones(String J, String S) {
