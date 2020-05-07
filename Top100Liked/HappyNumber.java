@@ -22,7 +22,7 @@ class Solution {
         int x = n;
         int s = 0;
         while(x>0){// 如果出现 x/10等于0 跳出while loop
-            s = s+(x%10)*(x%10);
+            s += (x%10)*(x%10);
             x = x/10;
         }
         return s ;
