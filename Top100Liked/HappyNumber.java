@@ -18,8 +18,7 @@ class Solution {
         }
         return true ;
     }
-    public int cal(int n){
-        int x = n;
+    public int cal(int x){
         int s = 0;
         while(x>0){// 如果出现 x/10等于0 跳出while loop
             s += (x%10)*(x%10);
