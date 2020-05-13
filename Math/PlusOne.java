@@ -1,3 +1,4 @@
+
 //time:o(n)
 //spcae:o(n)
 
