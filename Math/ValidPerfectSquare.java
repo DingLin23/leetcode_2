@@ -1,3 +1,5 @@
+// time:log(n)
+// spcae:o(1)
 class Solution {
     public boolean isPerfectSquare(int num) {
         int low = 1;
