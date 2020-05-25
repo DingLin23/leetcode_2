@@ -3,4 +3,10 @@
 365 water and jug problem
 204 count primes
 
-
+必备小代码
+int res;
+ 
+while (num !=0) {
+    res = res * 10 + num % 10;
+    num/=10;
+}
