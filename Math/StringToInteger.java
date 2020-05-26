@@ -1,6 +1,6 @@
 class Solution {
     public int myAtoi(String str) {
-          str = str.trim();
+        str = str.trim();
         if (str == null || str.length() == 0) return 0;
 
         char firstChar = str.charAt(0);
