@@ -1,5 +1,5 @@
 //time:o(m*n)
-//space:o(n)
+//space:o(m*n)
 class Solution {
     int dx[] = {0,1,0,-1};
     int dy[] = {1,0,-1,0};
