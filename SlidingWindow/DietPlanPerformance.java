@@ -9,7 +9,7 @@ class Solution {
             sum += calories[i];
             
             if (i >= k-1) {
-                if(i > k-1){
+                if(i > k-1){ // sliding the window sum
                 sum -= calories[i-k];
                 }
                 if (sum < lower) point--;
