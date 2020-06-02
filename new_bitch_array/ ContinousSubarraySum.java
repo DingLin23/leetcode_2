@@ -35,3 +35,7 @@ class Solution {
 // 10%3 =1
 //     which mean we found the answer they hava same reminder % 3.
 //     so subsum between index of 7 and 10 % 3 == 0; we found the answer. 
+// a%k = x
+// b%k = x
+// (a - b) %k = x -x = 0
+// here a - b = the sum between i and j.
