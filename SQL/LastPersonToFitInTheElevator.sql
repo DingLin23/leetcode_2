@@ -1,4 +1,4 @@
-# Write your MySQL query statement below
+-- # Write your MySQL query statement below
 SELECT person_name FROM Queue as a
 WHERE
 (
@@ -6,4 +6,4 @@ WHERE
     WHERE b.turn<=a.turn
     ORDER By turn
 )<=1000
-ORDER BY a.turn DESC limit 1;
+ORDER BY a.turn DESC limit 1; 
