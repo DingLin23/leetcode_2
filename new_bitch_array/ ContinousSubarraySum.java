@@ -7,7 +7,7 @@ class Solution {
         int sum = 0;
         Map<Integer,Integer> map = new HashMap<>();
         map.put(0,-1);
-        For anybody is confused about map.put(0,-1);
+        // For anybody is confused about map.put(0,-1);
 // In the case nums = [1, 5] k = 6, at i=1, sum % k is 0, so we need a key '0' in the map,
 //         and it must be comply with the continuous condition, i - map.get(sum) > 1, 
 //         so we give an arbitrary value of -1.
