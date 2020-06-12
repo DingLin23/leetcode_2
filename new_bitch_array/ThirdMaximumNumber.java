@@ -1,3 +1,4 @@
+class solution{
 public int thirdMax(int[] nums) {
     Integer max1 = null;
      Integer max2 = null;
@@ -17,3 +18,4 @@ public int thirdMax(int[] nums) {
      }
      return max3 == null ? max1 : max3;
  }
+}
