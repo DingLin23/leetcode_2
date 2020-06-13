@@ -9,6 +9,9 @@ class Solution {
         if (right == 0) {
             return 0;
         }
+        if (nums[len - 1] < target) {
+            return len;
+        }
 
         int left = 0;
 
