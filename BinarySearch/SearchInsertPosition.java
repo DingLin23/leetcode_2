@@ -25,4 +25,24 @@ class Solution {
         }
         return left;
     }
+
+
+//time:o(nlgn)
+//space:o(1)
+
+class Solution {
+    public int findDuplicate(int[] nums) {
+        int low = 1, high = nums.length - 1;
+    while (low <= high) {
+        int mid = (low + high) >>> 1;
+        int cnt = 0;
+        for (int a : nums) {
+            if (a <= mid) ++cnt;
+        }
+        if (cnt <= mid) low = mid + 1;
+        else high = mid-1;
+    }
+    return low;
+    }
+        
 }
