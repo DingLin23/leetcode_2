@@ -1,6 +1,6 @@
 //time:o(lgn)
 //space:o(1)
-
+//test case :[3,5,5,5,5] 5  return 2; 返回最靠前的。
 class Solution {
     public int searchInsert(int[] nums, int target) {
 
