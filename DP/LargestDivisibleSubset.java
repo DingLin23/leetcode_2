@@ -1,3 +1,6 @@
+//time:O(n^2)
+//space:O(n^2)
+
 class Solution {
     public List<Integer> largestDivisibleSubset(int[] nums) {
         // if we sort the array, every element in a divisibleSubset can be divisible by the element just before it.
