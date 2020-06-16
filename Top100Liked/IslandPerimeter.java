@@ -19,6 +19,15 @@ class Solution {
     //   }
     //   return count;  
     // }
+
+// 1.the description of this problem implies there may be an "pattern" in calculating the perimeter of the islands.
+// and the pattern is islands * 4 - neighbours * 
+// 2, since every adjacent islands made two sides disappeared(as picture below).
+// 3.the next problem is: how to find the neighbours without missing or recounting? i was inspired by the problem: https://leetcode.com/problems/battleships-in-a-board/
+// +--+     +--+                   +--+--+
+// |  |  +  |  |          ->       |     |
+// +--+     +--+                   +--+--+
+// 4 + 4 - ? = 6  -> ? = 2
      public int islandPerimeter(int[][] grid) {
         int islands = 0, neighbours = 0;
 
