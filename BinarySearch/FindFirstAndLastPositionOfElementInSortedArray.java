@@ -18,7 +18,10 @@ class Solution {
         int start = 0, end = nums.length -1;
    
         while(start+1 < end){
-                 int mid = start + (end-start)/2;
+            int mid = start + (end-start)/2;
+                // if (nums[mid] == target) {  // 不可以这么写，因为，找到后，还要往前，或则往后找。
+                //     return mid;
+                // }
             if(nums[mid] >= target){
                 end = mid;
             }else{
@@ -33,7 +36,7 @@ class Solution {
         int start = 0, end = nums.length -1;
    
         while(start+1<end){
-                 int mid = start + (end-start)/2;
+            int mid = start + (end-start)/2;
             if(nums[mid] <= target){
                 start = mid;
             }else{
