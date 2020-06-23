@@ -1,4 +1,4 @@
-//time: o(lgn)
+//time: o(n)
 //space: o(1)
 
 class Solution {
