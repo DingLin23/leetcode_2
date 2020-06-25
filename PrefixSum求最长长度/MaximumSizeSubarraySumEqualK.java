@@ -3,7 +3,6 @@
 
 class Solution {
     public int maxSubArrayLen(int[] nums, int k) {
-        if (nums == null || nums.length == 0) return 0;
         int res = 0, sum = 0;
         
         Map <Integer,Integer> map = new HashMap<>();
