@@ -31,7 +31,7 @@ class Solution {
 
     class Solution {
         public int[] topKFrequent(int[] nums, int k) {
-            Map<Integer, Integer> map = new HashMap<>();
+        Map<Integer, Integer> map = new HashMap<>();
         List<Integer>[] bucket = new List[nums.length + 1];
         int[] res = new int[k];
         
