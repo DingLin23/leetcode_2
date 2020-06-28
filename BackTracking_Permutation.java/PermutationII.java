@@ -1,3 +1,5 @@
+//time:O(n!)
+//space:O(n)
 class Solution {
     public List<List<Integer>> permuteUnique(int[] nums) { 
        List<List<Integer>> res = new ArrayList<>();
