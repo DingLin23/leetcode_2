@@ -63,8 +63,8 @@ class Solution {
                 left = mid;
             }
         }
-        if (nums[left] >= target) return left; // 边界问题
-        else if (nums[right] >= target) return right;
-        return right+1;
+        if (nums[left] >= target) return left; //因为在左边界sorted， 所以只要先判断left是否大于target.
+        else if (nums[right] >= target) return right; //如果left小于target，然后判断是否应该在中间
+        return right+1; //如果大于left和right就加在下一个。
     }
 }
