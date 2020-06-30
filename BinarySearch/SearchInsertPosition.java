@@ -47,6 +47,7 @@ class Solution {
         
 }
 
+
 class Solution {
     public int searchInsert(int[] nums, int target) {
         if (nums == null || nums.length == 0) return 0;
