@@ -21,13 +21,11 @@ class Solution {
         
         while (left+1 < right) {
             int mid = left + (right - left)/2;
-            if (target > reader.get(mid)) {
+            if (target >= reader.get(mid)) {
                 left = mid;
             }
-            else if (target < reader.get(mid)) {
+            else {
                 right = mid;
-            }else {
-                return mid;
             }
         }
         
