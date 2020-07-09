@@ -9,7 +9,8 @@ class Solution {
             int min = Integer.MAX_VALUE; 
             for(int j = 0; j < coins.length; j++){ //looping the coints
                 
-                //i should be greate and equal to that coint amount and after took this coint and the rest of amount able to make up with other coint.
+                //i should be greate and equal to that coint amount and after 
+                //took this coint and the rest of amount able to make up with other coint.
                 if(i >= coins[j] && dp[i-coins[j]] != -1){
                     // memorized the dp[i-coins[j]]+1;
                     min = Math.min(min,dp[i-coins[j]]+1);
