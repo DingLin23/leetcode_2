@@ -18,7 +18,6 @@
 // however u can do level from top to bottom which will give nlgn time complexity
 //because height will be called on each node log(n) times.
 
-O(logn) times.
 class Solution {
     public boolean isBalanced(TreeNode root) {
         return getHeight(root) != -1;
