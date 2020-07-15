@@ -3,17 +3,16 @@
 
 class Solution {
     public int findMin(int[] nums) {
-       int lo = 0, high = nums.length -1;
-        while(lo < high) {
-            int mid = (lo+high) >>> 1;
-            if (nums[mid] > nums[high]) {
-                lo = mid+1;
+        if (nums == null || nums.length == 0) return -1;
+        int left = 0, right = nums.length-1;
+        while (left+1 < right) {
+            int mid = left + (right - left)/2;
+            if (nums[mid] > nums[right]) {
+                    left = mid;
+                }else {
+                    right = mid;
+                }
             }
-            else{
-                high = mid;
-            }
+        return Math.min(nums[left],nums[right]);
     }
-         return nums[lo];
-    }
-
 }
