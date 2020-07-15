@@ -3,44 +3,28 @@
 
 class Solution {
     public int search(int[] nums, int target) {
-        if (nums.length == 0) {
-           return -1;
-       }
-
-       int lo = 0;
-       int hi = nums.length-1;
-        return bs(nums,lo,hi,target);
+        if (nums == null || nums.length == 0) return -1;
+        int left = 0, right = nums.length-1;
+        while (left+1 < right) {
+            int mid = left + (right - left)/2;
+            if (nums[mid] == target) return mid;
+            if (nums[mid] < nums[right]) {
+                if (nums[mid] < target && target <= nums[right]) {
+                    left = mid;
+                }else {
+                    right = mid;
+                }
+                
+            }else if (nums[mid] > nums[left]) {
+                if (nums[left] <= target && target < nums[mid]) {
+                    right = mid;
+                }else {
+                    left = mid;
+                }
+            }
+        }
+        if (nums[left] == target) return left;
+        if (nums[right] == target) return right;
+        return -1;
     }
-    private int bs(int[]nums, int lo, int hi,int target){
-       while (lo+1<hi) {
-           int mid = lo+(hi-lo)/2;
-           if (nums[mid] == target) {
-               return mid;
-           }
-           if (nums[mid] < nums[hi]) { // right sorted 
-               if (nums[mid] < target && target <= nums[hi]) {
-                   lo = mid;
-               } else {
-                   hi = mid;
-               }
-           } else if (nums[lo] < nums[mid]) { // left sorted
-               if (nums[lo] <= target && target < nums[mid]) {
-                   hi = mid;
-               } else {
-                   lo = mid;
-               }
-           }
-       }
-
-       if (nums[lo] == target) {
-           return lo;
-       } else if (nums[hi] == target) {
-           return hi;
-       } else {
-           return -1;
-       }
-    }
-   
-
-
 }
