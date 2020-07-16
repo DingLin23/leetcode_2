@@ -35,13 +35,13 @@ class Solution {
        while (lo+1<hi) {
            int mid = lo+(hi-lo)/2;
            if (check(nums, mid)) {
-               lo = mid;
+               lo = mid; // checking 是递增的，num < target要 left = mid;
            } else {
                hi = mid;
            }
        }
        if (check(nums, lo)) {
-           return hi;
+           return hi;// 为什么先输出right呢，因为target在右端。
        } else {
            return lo;
        }
