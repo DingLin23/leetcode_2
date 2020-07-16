@@ -14,6 +14,6 @@ class Solution {
                 right = mid;
             }
         }
-        return (right == x/right)? right : left;
+        return (right == x/right)? right : left; //因为答案要很接近x所以要先输出right。
     }
 }
