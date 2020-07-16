@@ -3,7 +3,7 @@
 
 class Solution {
     public int mySqrt(int x) {
-        if (x == 0) return 0;
+        if (x == 0) return 0;//corner case, cant divide by zero.
         int left = 0, right = x;
         while (left+1 < right) {
             int mid = left + (right - left)/2;
