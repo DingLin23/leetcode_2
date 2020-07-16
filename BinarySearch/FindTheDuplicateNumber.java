@@ -28,22 +28,40 @@
 
 //time:O(nlgn)
 //space:o(1)
-    class Solution {
-        public int findDuplicate(int[] nums) {
-            int low = 1, high = nums.length - 1;
-        while (low < high) {
-            int mid = (low + high) >>> 1;
-            int cnt = 0;
-            for (int a : nums) {
-                if (a <= mid) ++cnt;
-            }
-            if (cnt <= mid) low = mid + 1;
-            else high = mid;
-        }
-        return low;
-        }
-            
-    }
+class Solution {
+    public int findDuplicate(int[] nums) {
+       int lo = 1;
+       int hi = nums.length-1;
+       while (lo+1<hi) {
+           int mid = lo+(hi-lo)/2;
+           if (check(nums, mid)) {
+               lo = mid;
+           } else {
+               hi = mid;
+           }
+       }
+       if (check(nums, lo)) {
+           return hi;
+       } else {
+           return lo;
+       }
+   }
+
+
+   // check if there are "target" number of elements <= target
+   // if true, the duplicate number must be to the right of the target number
+   // if false, the duplicate number must be to the left of the target number (or the target number itself)
+    // 原理就是去找某一阶段，或则某一节它是sorted的。
+   private boolean check(int[] nums, int target) {
+       int cnt = 0;
+       for (int num : nums) {
+           if (num <= target) {
+               cnt++;
+           }
+       }
+       return cnt <= target;
+   }
+}
 
 //Time:o(n)
 //space:o(1)
