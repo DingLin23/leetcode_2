@@ -22,7 +22,7 @@ class Solution {
            for (int[] dir : new int [][]{{0,1},{0,-1},{1,0},{-1,0}}) {
                int x = curr.x + dir[0];
                int y = curr.y + dir[1];
-               //如果没有wall就一直走。看看能不能走到destination.
+               //如果没有wall就一直走。看看能不能走到destination.这里不用!visited.因为要往回查
                while (0 <= x && x < m && 0 <= y && y < n && maze[x][y] == 0) {
                    x += dir[0];
                    y += dir[1];
