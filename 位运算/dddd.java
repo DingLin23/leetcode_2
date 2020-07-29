@@ -9,7 +9,7 @@ public static int droppedRequests(List<Integer> requestTime) {
     helper(nums,drop,10,20);
     helper(nums,drop,60,60);
     int count = 0;
-    for (int i = 0; i < n; i++) {
+    for (int i = 0; i < nums.length; i++) {
         count+= drop[i];
     }
     return count;
@@ -30,4 +30,33 @@ private static void helper(int[]nums,int[]drop,int time, int limit) {
         i = tmp;
     }
 }
+
+public static int droppedRequests(List<Integer> requestTime) {
+    int request = 0, res = 0;
+    int left = 0, right = requestTime.size()-1;
+    while (left < right) {
+       while (requestTime.get(left) == 1 && left < requestTime.size()) {
+           left++;
+           request++;
+           if (request > 3) {
+               res++;
+           }
+       }
+       while (requestTime.get(left) < 10 && left < requestTime.size()) {
+           left++;
+           request++;
+           if (request > 20) {
+               res++;
+           }
+       }
+       while (requestTime.get(left) < 60 && left < requestTime.size()) {
+        left++;
+        request++;
+        if (request > 60) {
+            res++;
+        }
+        }
+    }
+    return res;
+    }
 }
