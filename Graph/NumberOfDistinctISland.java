@@ -36,7 +36,7 @@ class Solution {
                    q.offer(new Coordinate(x, y));
                }
            }
-           sb.append(",");
+           sb.append(",");//  去分割全方向找到，会得到几个。分割4个方向找完后的图。d
        }
        return sb.toString();
    }
