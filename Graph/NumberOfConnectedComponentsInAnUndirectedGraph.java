@@ -12,6 +12,7 @@ class Solution {
         return count;
    }
     
+   //共用一个set。
     private void bfs(int i, int[][] edges,Map<Integer,Set<Integer>> graph,Set<Integer>set) {
         Queue<Integer> q = new LinkedList<>();
         q.offer(i);
