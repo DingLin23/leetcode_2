@@ -8,3 +8,10 @@
 
 1。 如果路径里的元素是可以重复选择的，例子如permutation。递归程序则不需要指针。
 2. 如果路径里的元素不能重复选择的，例子如，combination或者subset,递归程序里的需要一个指针，且i+1，
+3. 但凡有重复的都需要sort一下数组，如果是subset或者排列组合的都是在for loop里 处理一个while loop
+   模版：
+   while (i+1 < nums.length && nums[i] == nums[i+1]) i++;
+
+   如果是comnbination sum的话，for loop 里要先判断 当前是否是下一个然后当前是否等于先前 
+   模版：
+   if (i > start && nums[i] == nums[start]) continue; /skip duplicate/
