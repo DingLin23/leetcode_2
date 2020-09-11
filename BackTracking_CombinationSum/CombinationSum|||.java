@@ -1,3 +1,8 @@
+// time: O((9!⋅K)/(9−K)!)
+// space: O(k)
+​	
+ 
+
 class Solution {
     public List<List<Integer>> combinationSum3(int k, int n) {
         List<List<Integer>> res = new ArrayList<>();
