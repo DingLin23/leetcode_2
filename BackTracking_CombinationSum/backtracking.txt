@@ -6,12 +6,13 @@
 
 3、结束条件：也就是到达决策树底层，无法再做选择的条件。
 
+如果是要求每个子数组的size == 原数组的size的 不需要指针。 
+如果不相等的需要一个start的指针（1.如果可以允许重复，传i； 2.如果不允许重复传i+1）；
+
 1。 如果路径里的元素是可以重复选择的，例子如permutation。递归程序则不需要指针。
 2. 如果路径里的元素不能重复选择的，例子如，combination2或者subset2,递归程序里的需要一个指针，且i+1，
 3. 但凡有重复的都需要sort一下数组，如果是subset或者排列组合的都是在for loop里 处理一个while loop
    模版：
    while (i+1 < nums.length && nums[i] == nums[i+1]) i++;
 
-   如果是comnbination sum的话，for loop 里要先判断 当前是否是下一个然后当前是否等于先前 
-   模版：
-   if (i > start && nums[i] == nums[start]) continue; /skip duplicate/
+  
