@@ -1,3 +1,6 @@
+//time : O(s+t)
+// space: O(s+t)
+
 class Solution {
     public String minWindow(String s, String t) {
                  // corner case
