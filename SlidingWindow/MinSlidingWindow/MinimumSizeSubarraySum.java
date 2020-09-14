@@ -8,8 +8,6 @@ class Solution {
         int min = Integer.MAX_VALUE;
         int i = 0;
         int j = 0;
-        int minLeft = 0;
-        int minRight = 0;
         int sum = 0;
         while (j < nums.length) {
             sum += nums[j];
@@ -18,8 +16,6 @@ class Solution {
                 sum -= nums[i];
                 if (currL < min) {
                     min = currL;
-                    minLeft = i;
-                    minRight = j;
                 }
                 i++;
             }
