@@ -1,7 +1,7 @@
 import java.util.*;
 //time:o(n^2);
 //space: o(n^2)
-public class FavoriteGenres {
+class FavoriteGenres {
     public static void main(String[] args) {
         Map<String, List<String>> userMap = new HashMap<>();
         List<String> list1 = Arrays.asList("song1", "song2", "song3", "song4", "song8");
